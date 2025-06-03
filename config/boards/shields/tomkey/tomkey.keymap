@@ -1,13 +1,18 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/mouse.h>
 
 / {
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
+            // -----------------------------------------------------------------------------------------
+            // |  Q  |  W  |  E  |  R  |  T  |       |  Y  |  U  |  I  |  O  |  P  |
+            // |  A  |  S  |  D  |  F  |  G  | MO6   | \ | |  H  |  J  |  K  |  L  | - _ |
+            // |  Z  |  X  |  C  |  V  |  B  | [ { | ] } |  N  |  M  | , < | . > |LT2/| 
+            // |CTRL|ALT |CMD |SHFT|LT4/SPC|CMD+SPC| ENT |LT3/BSPC|           | LT5/ESC |
             bindings = <
 &kp Q      &kp W         &kp E             &kp R           &kp T                                                 &kp Y            &kp U     &kp I         &kp O    &kp P
 &kp A      &kp S         &kp D             &kp F           &kp G        &mo 6                 &kp BACKSLASH      &kp H            &kp J     &kp K         &kp L    &kp MINUS
@@ -17,15 +22,27 @@
         };
 
         MOUSE {
+            // -----------------------------------------------------------------------------------------
+            // Mouse layer for trackball control
+            // |     |     |     |     |     |       |     |     |     |     |     |
+            // |     |     |     |     |     |     | |     |     | LMB | MMB | RMB |     |
+            // |     |     |     |     |     |     | |     |     |     |     |     |     |
+            // |CTRL | ALT | CMD |SHFT |     |     | |     | MO3 |           |     |
             bindings = <
 &trans         &trans         &trans            &trans          &trans                                           &trans           &trans    &trans        &trans      &trans
-&trans         &trans         &trans            &trans          &trans       &trans           &trans             &trans           &mkp MB1  &mkp MB3      &mkp MB2    &trans
+&trans         &trans         &trans            &trans          &trans       &trans           &trans             &trans           &mkp LCLK &mkp MCLK     &mkp RCLK   &trans
 &trans         &trans         &trans            &trans          &trans       &trans           &trans             &trans           &trans    &trans        &trans      &trans
 &kp LCTRL      &kp LEFT_ALT   &kp LEFT_COMMAND  &kp LEFT_SHIFT  &trans       &trans           &trans             &mo 3                                                &trans
             >;
         };
 
         SCROLL {
+            // -----------------------------------------------------------------------------------------
+            // Scroll layer
+            // | ESC |     |     |     |     |       |     |     |     |     |     |
+            // |     |     |     |     |     |     | |     |     |     |     |     |     |
+            // | F12 |     |     |     |     |     | |     |     |     |     |     |     |
+            // | F12 |     |     |     |     |     | |     |     |           |     |
             bindings = <
 &kp ESCAPE  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans      &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
@@ -35,15 +52,27 @@
         };
 
         ARROW {
+            // -----------------------------------------------------------------------------------------
+            // Navigation and shortcuts layer
+            // | ` ~ |Cmd+Shift+Tab| Cmd+→ | 9 | 0 |       |     | Ctrl+← | ↑ | Ctrl+→ | Cmd+P |
+            // | Tab |Opt+Cmd+← | Cmd+← |Cmd+Opt+→| [ { |     | |     | ← | ↓ | → | Cmd+K |
+            // | Cmd |Cmd+Shift+← |     |Cmd+Shift+→| ] } |     | |     |     | Ctrl+↑ |     | Cmd+L |
+            // |     |     | Shift |     |     |     | |     |     |           |     |
             bindings = <
-&kp GRAVE  &kp LC(LS(TAB))         &kp LG(RIGHT)   &kp NUMBER_9     &kp NUMBER_0                                   &trans  &kp RC(LEFT_ARROW)  &kp UP_ARROW      &kp RC(RIGHT_ARROW)  &kp LG(P)
-&kp TAB    &kp LA(LG(LEFT_ARROW))  &kp LG(LEFT)    &kp LG(LA(RIGHT_ARROW))  &kp LEFT_BRACKET   &trans      &trans  &trans  &kp LEFT_ARROW      &kp DOWN_ARROW    &kp RIGHT_ARROW      &kp LG(K)
-&kp LCMD   &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &kp RIGHT_BRACKET  &trans      &trans  &trans  &trans              &kp LC(UP_ARROW)  &trans               &kp LG(L)
-&trans     &trans                  &kp LEFT_SHIFT  &trans                   &trans             &trans      &trans  &trans                                                              &trans
+&kp GRAVE  &kp LC(LS(TAB))         &kp LG(RIGHT)   &kp NUMBER_9            &kp NUMBER_0                                   &trans  &kp RC(LEFT_ARROW)  &kp UP_ARROW      &kp RC(RIGHT_ARROW)  &kp LG(P)
+&kp TAB    &kp LA(LG(LEFT_ARROW))  &kp LG(LEFT)    &kp LG(LA(RIGHT_ARROW)) &kp LEFT_BRACKET   &trans      &trans  &trans  &kp LEFT_ARROW      &kp DOWN_ARROW    &kp RIGHT_ARROW      &kp LG(K)
+&kp LCMD   &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW)) &kp RIGHT_BRACKET  &trans      &trans  &trans  &trans              &kp LC(UP_ARROW)  &trans               &kp LG(L)
+&trans     &trans                  &kp LEFT_SHIFT  &trans                  &trans             &trans      &trans  &trans                                                              &trans
             >;
         };
 
         NUM {
+            // -----------------------------------------------------------------------------------------
+            // Numbers and symbols layer
+            // | ` ~ | 7 | 8 |Cmd+Shift+4| + |       | \ | | 7 | 8 | 9 | ; : |
+            // | / ? | 4 | 5 | 6 | * |     | | ! | 4 | 5 | 6 | ' " |
+            // |Shift/0| 1 | 2 | 3 | . |     | | 0 | 1 | 2 | 3 | = + |
+            // |     |     |     |     |     |     | |Shift|           |     |
             bindings = <
 &kp GRAVE                &kp NUMBER_7  &kp NUMBER_8  &kp LG(LS(NUMBER_4))  &kp PLUS                          &kp BACKSLASH    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp SEMICOLON
 &kp SLASH                &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6          &kp ASTERISK  &trans      &trans  &kp EXCLAMATION  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp SQT
@@ -53,6 +82,12 @@
         };
 
         FUNCTION {
+            // -----------------------------------------------------------------------------------------
+            // Function keys layer
+            // |     |     |     |     |     |       | F1 | F2 | F3 | F4 | F5 |
+            // |     |     |     |     |     |     |F13| F6 | F7 | F8 | F9 | F10|
+            // |     |     |     |     |     |     | | |     |     |     |     | F11|
+            // |     |     |     |     |     |     | |     |           | F12|
             bindings = <
 &trans  &trans  &trans  &trans  &trans                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
 &trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
@@ -61,7 +96,13 @@
             >;
         };
 
-        layer_6 {
+        SYSTEM {
+            // -----------------------------------------------------------------------------------------
+            // System and Bluetooth layer
+            // |Cmd+Q|Ctrl+W|     |     |     |       |BT Prv|BT Nxt|BT 2|BT 3|BT 4|
+            // |Cmd+Shift+Z|  |Ctrl+C|     |     |     | |     |     |     |     |     |
+            // |Cmd+Z|Cmd+X|Cmd+C|Cmd+V|     |     | |     |     |     |     |     |
+            // |     |     |     |     |     |     | |     |           |     |
             bindings = <
 &kp LG(Q)      &kp LC(W)  &trans     &trans     &trans                      &bt BT_PRV     &bt BT_NXT       &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &kp LG(LS(Z))  &trans     &kp LC(C)  &trans     &trans  &trans      &trans  &trans         &trans           &trans        &trans        &trans
