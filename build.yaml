@@ -1,10 +1,13 @@
-# Fixed build configuration
+# Fixed build configuration with unique artifact names
 ---
 include:
  - board: seeeduino_xiao_ble
    shield: tomkey_R
+   artifact-name: tomkey-right
  - board: seeeduino_xiao_ble
    shield: tomkey_L dongle_display
+   artifact-name: tomkey-left
    snippet: studio-rpc-usb-uart
  - board: seeeduino_xiao_ble
    shield: settings_reset
+   artifact-name: settings-reset
