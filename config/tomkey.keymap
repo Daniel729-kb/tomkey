@@ -9,17 +9,107 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
 
+// Layer definitions for clarity
+#define DEFAULT 0
+#define MOUSE 1
+#define SCROLL 2
+#define ARROW 3
+#define NUM 4
+#define FUNCTION 5
+#define SYSTEM 6
+
+// Configure existing behaviors
+&mt {
+    flavor = "balanced";
+    quick-tap-ms = <0>;
+};
+
+&sl { release-after-ms = <250>; };
+
 / {
+    // ========================
+    // COMBOS SECTION
+    // ========================
+
+    combos {
+        compatible = "zmk,combos";
+
+        // Mouse layer toggle - J+K keys
+        mouse_toggle {
+            bindings = <&tog MOUSE>;
+            key-positions = <18 19>;
+            timeout-ms = <50>;
+        };
+
+        // Navigation combos
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <10 11>;
+        };
+
+        alt_tab {
+            bindings = <&kp LA(TAB)>;
+            key-positions = <11 12>;
+        };
+
+        // Punctuation combos
+        enter_combo {
+            bindings = <&kp ENTER>;
+            key-positions = <20 21>;
+        };
+
+        equals {
+            bindings = <&kp EQUAL>;
+            key-positions = <7 8>;
+        };
+
+        escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
+        };
+
+        // Letter combos
+        shift_z {
+            bindings = <&kp LS(Z)>;
+            key-positions = <22 23>;
+        };
+
+        question_mark {
+            bindings = <&kp RS(SLASH)>;
+            key-positions = <32 33>;
+        };
+
+        bs {
+            bindings = <&kp BSPC>;
+            key-positions = <8 9>;
+        };
+    };
+
+    // ========================
+    // MACROS SECTION
+    // ========================
+
+    macros {
+        // Command+Space macro for Mac
+        cmd_space: cmd_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(SPACE)>;
+            label = "CMD_SPACE";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             display-name = "Base";
+            // Left: 23 keys, Right: 20 keys = 43 total
             bindings = <
 &kp Q      &kp W         &kp E             &kp R           &kp T                                                 &kp Y            &kp U     &kp I         &kp O    &kp P
 &kp A      &kp S         &kp D             &kp F           &kp G        &mo 6                 &kp BACKSLASH      &kp H            &kp J     &kp K         &kp L    &kp MINUS
 &kp Z      &kp X         &kp C             &kp V           &kp B        &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &kp N            &kp M     &kp COMMA     &kp DOT  &lt 2 SLASH
-&kp LCTRL  &kp LEFT_ALT  &kp LEFT_COMMAND  &kp LEFT_SHIFT  &lt 4 SPACE  &kp LG(SPACE)         &kp ENTER          &lt 3 BACKSPACE                                   &lt 5 ESCAPE
+&kp LCTRL  &kp LEFT_ALT  &kp LEFT_COMMAND  &kp LEFT_SHIFT  &lt 4 SPACE  &cmd_space            &kp ENTER          &lt 3 BACKSPACE                                   &lt 5 ESCAPE
             >;
         };
 
