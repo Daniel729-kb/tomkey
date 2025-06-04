@@ -116,10 +116,10 @@
             // Left: 23 keys, Right: 20 keys = 43 total
 
             bindings = <
-&kp Q      &kp W         &kp E             &kp R           &kp T        &kp Y             &kp U              &lt 4 I          &kp O      &kp P
-&kp A      &kp S         &kp D             &kp F           &kp G        &mo 6             &kp BACKSLASH      &kp H            &kp J      &kp K      &kp L    &kp MINUS
-&kp Z      &kp X         &kp C             &kp V           &kp B        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp N            &kp M      &kp COMMA  &kp DOT  &lt 2 SLASH
-&kp LCTRL  &kp LEFT_ALT  &kp LEFT_COMMAND  &kp LEFT_SHIFT  &lt 4 SPACE  &cmd_space        &kp ENTER          &lt 3 BACKSPACE  &lt 5 DEL
+&kp Q             &kp W         &kp E             &kp R      &kp T        &kp Y             &kp U              &lt 4 I          &kp O      &kp P
+&kp A             &kp S         &kp D             &kp F      &kp G        &mo 6             &kp AT_SIGN        &kp H            &kp J      &kp K      &kp L    &kp MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C             &kp V      &kp B        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp N            &kp M      &kp COMMA  &kp DOT  &lt 2 SLASH
+&kp LCTRL         &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 6 TAB  &lt 2 SPACE  &cmd_space        &lt 2 SPACE        &lt 3 BACKSPACE  &lt 5 DEL
             >;
         };
 
@@ -156,10 +156,10 @@
         SCROLL {
             display-name = "Scroll";
             bindings = <
-&kp GRAVE                &kp NUMBER_7  &kp NUMBER_8  &kp LG(LS(NUMBER_4))  &kp PLUS      &kp BACKSLASH  &kp NUMBER_7  &kp NUMBER_8     &kp NUMBER_9  &kp SEMICOLON
-&kp SLASH                &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6          &kp ASTERISK  &trans         &trans        &kp EXCLAMATION  &kp NUMBER_4  &kp NUMBER_5   &kp NUMBER_6  &kp SQT
-&mt LEFT_SHIFT NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3          &kp PERIOD    &trans         &trans        &kp NUMBER_0     &kp NUMBER_1  &kp NUMBER_2   &kp NUMBER_3  &kp EQUAL
-&trans                   &trans        &trans        &trans                &trans        &trans         &trans        &kp LEFT_SHIFT   &trans
+&kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9   &kp NUMBER_0
+&kp EXCLAMATION  &kp AT_SIGN   &kp HASH      &kp DOLLAR    &kp PERCENT   &trans        &trans        &kp CARET     &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&trans           &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans         &trans        &trans                &trans
+&trans           &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans
             >;
         };
 
@@ -176,10 +176,10 @@
         SYSTEM {
             display-name = "System";
             bindings = <
-&kp LG(Q)      &kp LC(W)  &trans     &trans     &trans  &bt BT_PRV  &bt BT_NXT  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&kp LG(LS(Z))  &trans     &kp LC(C)  &trans     &trans  &trans      &trans      &trans        &trans        &trans        &trans  &trans
-&kp LG(Z)      &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans  &trans      &trans      &trans        &trans        &trans        &trans  &trans
-&trans         &trans     &trans     &trans     &trans  &trans      &trans      &trans        &trans
+&kp LG(Q)      &kp LC(W)  &trans     &trans     &trans  &bt BT_PRV   &bt BT_NXT   &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&kp LG(LS(Z))  &trans     &kp LC(C)  &trans     &trans  &trans       &trans       &trans        &trans        &trans        &trans  &trans
+&kp LG(Z)      &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans  &bootloader  &bootloader  &trans        &trans        &trans        &trans  &trans
+&trans         &trans     &trans     &trans     &trans  &trans       &trans       &trans        &trans
             >;
         };
     };
