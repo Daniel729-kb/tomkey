@@ -116,10 +116,10 @@
             // Left: 23 keys, Right: 20 keys = 43 total
 
             bindings = <
-&kp Q             &kp W         &kp E             &kp R      &kp T        &kp Y             &kp U              &lt 4 I          &kp O      &kp P
-&kp A             &kp S         &kp D             &kp F      &kp G        &mo 6             &kp AT_SIGN        &kp H            &kp J      &kp K      &kp L    &kp MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C             &kp V      &kp B        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp N            &kp M      &kp COMMA  &kp DOT  &lt 2 SLASH
-&kp LCTRL         &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 6 TAB  &lt 2 SPACE  &cmd_space        &lt 2 SPACE        &lt 3 BACKSPACE  &lt 5 DEL
+&kp Q             &kp W     &kp E             &kp R      &kp T        &kp Y             &kp U              &lt 4 I          &kp O      &kp P
+&kp A             &kp S     &kp D             &kp F      &kp G        &mo 6             &kp AT_SIGN        &kp H            &kp J      &kp K      &kp L    &kp MINUS
+&mt LEFT_SHIFT Z  &kp X     &kp C             &kp V      &kp B        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp N            &kp M      &kp COMMA  &kp DOT  &lt 2 SLASH
+&kp LEFT_ALT      &kp LGUI  &kp LEFT_CONTROL  &lt 6 TAB  &lt 2 SPACE  &cmd_space        &lt 2 SPACE        &lt 3 BACKSPACE  &lt 5 DEL
             >;
         };
 
